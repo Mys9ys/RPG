@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -19,6 +20,14 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+            }
+
+            .btn-contener{
+                position: absolute;
+                width: 15%;
+                height: 15%;
+                border: 3px solid yellow;
+
             }
 
             .full-height {
@@ -64,32 +73,80 @@
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+    <body data-spy="scroll" data-target=".navbar-example">
+    <div class="navbar navbar-default navbar-static-top">
+            <ul class="top-right links">
+                <a href="#about">О игре</a>
+                <a href="#ratings">Рейтинги</a>
+                <a href="#news">Новости</a>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    RPG
-                </div>
-
-                <div class="links">
-                    <a href="#">Documentation</a>
-                    <a href="#">Laracasts</a>
-                    <a href="#">News</a>
-                    <a href="#">Forge</a>
-                    <a href="#l">GitHub</a>
-                </div>
-            </div>
+        @if (Route::has('login'))
+                @if (Auth::check())
+                    <a href="{{ url('/home') }}">Профиль</a>
+                @else
+                    <a href="{{ url('/login') }}">Войти</a>
+                    <a href="{{ url('/register') }}">Регистрация</a>
+                @endif
+        @endif
+            </ul>
+    </div>
+    <section class="main">
+        <img src="../../public/img/mainBG.jpg" style="width: 100%">
+    </section>
+    <section id="about">
+        <h2>Давным давно и бла-бла-бла</h2>
+        <pre><p>
+            Здесь произвольный текст. Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+            art party before they sold out master cleanse gluten free squid scenester freegan cosby sweater.
+            Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.
+            Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+            VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh
+            craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+        </p>
+            <p>
+            Здесь произвольный текст. Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+            art party before they sold out master cleanse gluten free squid scenester freegan cosby sweater.
+            Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.
+            Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+            VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh
+            craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+        </p>
+            <p>
+            Здесь произвольный текст. Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+            art party before they sold out master cleanse gluten free squid scenester freegan cosby sweater.
+            Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.
+            Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+            VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh
+            craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+        </p>
+            <p>
+            Здесь произвольный текст. Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+            art party before they sold out master cleanse gluten free squid scenester freegan cosby sweater.
+            Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.
+            Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+            VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh
+            craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+        </p>
+            <p>
+            Здесь произвольный текст. Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+            art party before they sold out master cleanse gluten free squid scenester freegan cosby sweater.
+            Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.
+            Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+            VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh
+            craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+        </p>
+    </section>
+    <section id="ratings">
+        <h2>Рейтинги бла бла бла</h2>
+        <div class="content">
+        <textarea style="width: 400px; height: 600px;"></textarea>
         </div>
+    </section>
+    <section id="news">
+        <h2>Новости проекта</h2>
+        <h5>Бла-бла-бла</h5>
+    </section>
+    <script src="{{ asset('public/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
     </body>
 </html>

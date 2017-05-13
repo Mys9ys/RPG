@@ -90,7 +90,7 @@ function battle(value) {
     // Проверка на окончание боя по параметру жизни(НР) если они закончились
     if (HP <= 0) {
         var message = $('.logLarge p').remove().text();
-        $('.logLarge').append('<p>'+$('.warrior'+value+'.name').text()+' Победил</p>');
+        $('.logLarge').append('<p id="animated">'+$('.warrior'+value+'.name').text()+' Победил</p>');
         $('.logSmall').append(message+' \n');
         battleResult(value,second);
     } else {
